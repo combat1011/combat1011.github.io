@@ -42,3 +42,17 @@ See the full [Project Catalog](ProjectCatalog.md) for all projects and initiativ
 ---
 
 *Last updated: 2026-03-31 — Synced by Perplexity Computer*
+
+---
+
+## 🔺 OOL Triangle
+
+Core decision-making protocol. OBSERVE → ORIENT → LEAD → LOOP.
+
+```
+MAE://OOL
+1. OBSERVE – gather facts
+2. ORIENT – assess cause
+3. LEAD – execute fix
+LOOP until stable
+```
