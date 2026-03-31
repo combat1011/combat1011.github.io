@@ -820,6 +820,157 @@
       mask-image: radial-gradient(ellipse 60% 60% at 50% 50%, black 20%, transparent 70%);
       -webkit-mask-image: radial-gradient(ellipse 60% 60% at 50% 50%, black 20%, transparent 70%);
     }
+
+    /* ========================================
+       TRY PURPLE FEATHER CTA
+       ======================================== */
+    .try-cta {
+      background: var(--color-surface-2);
+      text-align: center;
+    }
+
+    .try-cta .section-title {
+      margin-bottom: var(--space-3);
+    }
+
+    .try-cta .section-subtitle {
+      margin-inline: auto;
+      margin-bottom: var(--space-8);
+    }
+
+    .cta-btn-lg {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-3);
+      padding: var(--space-4) var(--space-12);
+      background: var(--color-primary);
+      color: #fff;
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: var(--text-lg);
+      border-radius: var(--radius-full);
+      text-decoration: none;
+      box-shadow: 0 6px 28px rgba(122, 57, 187, 0.35);
+    }
+
+    .cta-btn-lg:hover {
+      background: var(--color-primary-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 36px rgba(122, 57, 187, 0.45);
+    }
+
+    .cta-btn-lg:active {
+      transform: translateY(0);
+    }
+
+    .try-hint {
+      margin-top: var(--space-5);
+      font-size: var(--text-sm);
+      color: var(--color-text-faint);
+    }
+
+    /* ========================================
+       ARCHITECTURE
+       ======================================== */
+    .architecture-img {
+      width: 100%;
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--color-border);
+      box-shadow: var(--shadow-md);
+    }
+
+    .architecture-caption {
+      text-align: center;
+      margin-top: var(--space-5);
+      font-size: var(--text-sm);
+      color: var(--color-text-muted);
+      max-width: 640px;
+      margin-inline: auto;
+      line-height: 1.7;
+    }
+
+    /* ========================================
+       DOCUMENTATION / RESOURCES
+       ======================================== */
+    .docs-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--space-6);
+    }
+
+    @media (max-width: 768px) {
+      .docs-grid { grid-template-columns: 1fr; }
+    }
+
+    .doc-card {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-xl);
+      padding: var(--space-8);
+      display: flex;
+      flex-direction: column;
+      transition: box-shadow var(--transition-interactive),
+                  border-color var(--transition-interactive);
+    }
+
+    .doc-card:hover {
+      border-color: var(--color-primary);
+      box-shadow: var(--shadow-md);
+    }
+
+    .doc-card-title {
+      font-family: var(--font-display);
+      font-size: var(--text-lg);
+      font-weight: 600;
+      margin-bottom: var(--space-3);
+    }
+
+    .doc-card-desc {
+      color: var(--color-text-muted);
+      line-height: 1.7;
+      font-size: var(--text-base);
+      margin-bottom: var(--space-5);
+      flex: 1;
+    }
+
+    .doc-card-link {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: var(--text-sm);
+      color: var(--color-primary);
+      text-decoration: none;
+    }
+
+    .doc-card-link:hover {
+      color: var(--color-primary-hover);
+      text-decoration: underline;
+    }
+
+    .doc-card-link svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    /* Footer links row */
+    .footer-links {
+      display: flex;
+      gap: var(--space-5);
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      font-size: var(--text-xs);
+      color: var(--color-primary);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .footer-links a:hover {
+      text-decoration: underline;
+    }
   </style>
 </head>
 <body>
@@ -842,6 +993,8 @@
           <li><a href="#features">Features</a></li>
           <li><a href="#how-it-works">How It Works</a></li>
           <li><a href="#gold-codes">Gold Codes</a></li>
+          <li><a href="#try-it">Try It</a></li>
+          <li><a href="#resources">Resources</a></li>
         </ul>
       </nav>
 
@@ -1023,6 +1176,82 @@
     </div>
   </section>
 
+  <!-- ===== TRY PURPLE FEATHER ===== -->
+  <section class="try-cta" id="try-it">
+    <div class="container">
+      <h2 class="section-title js-reveal">Try Purple Feather Now</h2>
+      <p class="section-subtitle js-reveal">Available as a free ChatGPT Custom GPT — no setup required.</p>
+      <div class="js-reveal">
+        <a href="https://chatgpt.com/g/g-69cabc3745788191958cc80d45db0635-mae-purple-feather" class="cta-btn-lg" target="_blank" rel="noopener">
+          Open in ChatGPT →
+        </a>
+        <p class="try-hint">Start with: "Hey Purple Feather" or any Gold Code</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ARCHITECTURE ===== -->
+  <section id="architecture">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-label js-reveal">Architecture</p>
+        <h2 class="section-title js-reveal">Inside the System</h2>
+      </div>
+      <div class="js-reveal">
+        <img src="architecture.jpg" alt="Purple Feather modular architecture diagram" class="architecture-img" loading="lazy">
+        <p class="architecture-caption">Purple Feather's modular architecture — four specialized modules wrapped in hard-limit guardrails.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== DOCUMENTATION ===== -->
+  <section class="features" id="resources">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-label js-reveal">Resources</p>
+        <h2 class="section-title js-reveal">Documentation & Research</h2>
+      </div>
+
+      <div class="docs-grid">
+        <div class="doc-card js-reveal stagger-1">
+          <h3 class="doc-card-title">Operational Handbook</h3>
+          <p class="doc-card-desc">Complete guide to using Purple Feather — modules, Gold Codes, campus resources.</p>
+          <a href="#" class="doc-card-link">
+            Read Handbook
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+          </a>
+        </div>
+
+        <div class="doc-card js-reveal stagger-2">
+          <h3 class="doc-card-title">Digital Safety Protocol</h3>
+          <p class="doc-card-desc">DEFEND-LITE module deep dive — phishing, scams, financial literacy, academic integrity.</p>
+          <a href="#" class="doc-card-link">
+            Read Protocol
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+          </a>
+        </div>
+
+        <div class="doc-card js-reveal stagger-3">
+          <h3 class="doc-card-title">Institutional Strategy</h3>
+          <p class="doc-card-desc">Implementation roadmap for deploying persona-anchored AI copilots for student retention.</p>
+          <a href="#" class="doc-card-link">
+            Read Strategy
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+          </a>
+        </div>
+
+        <div class="doc-card js-reveal stagger-4">
+          <h3 class="doc-card-title">Open Source</h3>
+          <p class="doc-card-desc">Full source code, specs, and deployment instructions on GitHub.</p>
+          <a href="https://github.com/combat1011/My-Autonomous-Entity" class="doc-card-link" target="_blank" rel="noopener">
+            View on GitHub
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ===== FINE PRINT ===== -->
   <section class="fine-print" id="fine-print">
     <div class="container">
@@ -1049,7 +1278,11 @@
       <div class="footer-info">
         <p>Built by <strong>Cue Palmer</strong> — Niagara University</p>
         <p>Part of the MAE Protocol family</p>
-        <p><a href="#">Parent Protocol: MAE</a></p>
+        <div class="footer-links">
+          <a href="#">Parent Protocol: MAE</a>
+          <a href="https://chatgpt.com/g/g-69cabc3745788191958cc80d45db0635-mae-purple-feather" target="_blank" rel="noopener">Try on ChatGPT</a>
+          <a href="https://github.com/combat1011/My-Autonomous-Entity" target="_blank" rel="noopener">GitHub</a>
+        </div>
       </div>
       <div class="footer-right">
         <span class="footer-version">Purple Feather v0.1</span>
