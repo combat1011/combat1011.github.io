@@ -107,10 +107,10 @@
 
 - Drone Projects
     - Drone Pilot Workflow
-    - Drone Scope WNY (site + inspection)
+    - Drone Scope [REGION-SHORT] (site + inspection)
     - Drone Roof Inspection Tips
     - Drone Logo Design
-    - Drone Infographic / Images WNY
+    - Drone Infographic / Images [REGION-SHORT]
     - Drone vs Station Setup
     - Water Drone Search Tips
     - FAA Pilot Services
