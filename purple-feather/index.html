@@ -971,6 +971,171 @@
     .footer-links a:hover {
       text-decoration: underline;
     }
+
+    /* ========================================
+       STUDENT DISPATCHES — BLOG SECTION
+       ======================================== */
+    .blog-section {
+      background: var(--color-bg);
+    }
+
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-6);
+    }
+
+    @media (max-width: 1024px) {
+      .blog-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 600px) {
+      .blog-grid { grid-template-columns: 1fr; }
+    }
+
+    .blog-card {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-xl);
+      padding: var(--space-7, 1.75rem) var(--space-6);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-3);
+      position: relative;
+      overflow: hidden;
+      transition:
+        box-shadow var(--transition-interactive),
+        border-color var(--transition-interactive),
+        transform var(--transition-interactive);
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .blog-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--color-primary), #b06de8);
+      opacity: 0;
+      transition: opacity var(--transition-interactive);
+    }
+
+    .blog-card:hover {
+      border-color: var(--color-primary);
+      box-shadow: var(--shadow-md);
+      transform: translateY(-3px);
+    }
+
+    .blog-card:hover::before {
+      opacity: 1;
+    }
+
+    .blog-card-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: var(--space-2);
+    }
+
+    .blog-tag {
+      display: inline-flex;
+      align-items: center;
+      padding: var(--space-1) var(--space-3);
+      background: var(--color-primary-ghost);
+      color: var(--color-primary);
+      border: 1px solid rgba(122, 57, 187, 0.15);
+      border-radius: var(--radius-full);
+      font-family: var(--font-display);
+      font-size: var(--text-xs);
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      white-space: nowrap;
+    }
+
+    .blog-date {
+      font-size: var(--text-xs);
+      color: var(--color-text-faint);
+      font-family: var(--font-display);
+      font-weight: 500;
+      white-space: nowrap;
+    }
+
+    .blog-card-title {
+      font-family: var(--font-display);
+      font-size: var(--text-lg);
+      font-weight: 600;
+      line-height: 1.25;
+      color: var(--color-text);
+      margin-top: var(--space-1);
+    }
+
+    .blog-card-summary {
+      font-size: var(--text-sm);
+      color: var(--color-text-muted);
+      line-height: 1.7;
+      flex: 1;
+    }
+
+    .blog-card-arrow {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      font-family: var(--font-display);
+      font-size: var(--text-sm);
+      font-weight: 600;
+      color: var(--color-primary);
+      margin-top: var(--space-2);
+      transition: gap var(--transition-interactive), color var(--transition-interactive);
+    }
+
+    .blog-card:hover .blog-card-arrow {
+      gap: var(--space-3);
+      color: var(--color-primary-hover);
+    }
+
+    .blog-card-arrow svg {
+      width: 16px;
+      height: 16px;
+      flex-shrink: 0;
+      transition: transform var(--transition-interactive);
+    }
+
+    .blog-card:hover .blog-card-arrow svg {
+      transform: translateX(3px);
+    }
+
+    /* Featured first card spans 2 columns on large screens */
+    @media (min-width: 1025px) {
+      .blog-card--featured {
+        grid-column: span 2;
+        flex-direction: row;
+        align-items: flex-start;
+        gap: var(--space-8);
+      }
+
+      .blog-card--featured .blog-card-body {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        gap: var(--space-3);
+      }
+
+      .blog-card--featured .blog-card-title {
+        font-size: var(--text-xl);
+      }
+
+      .blog-card--featured .blog-card-eyebrow {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-3);
+        min-width: 160px;
+        padding-top: var(--space-1);
+      }
+    }
   </style>
 </head>
 <body>
@@ -995,6 +1160,7 @@
           <li><a href="#gold-codes">Gold Codes</a></li>
           <li><a href="#try-it">Try It</a></li>
           <li><a href="#resources">Resources</a></li>
+          <li><a href="#dispatches">Dispatches</a></li>
         </ul>
       </nav>
 
@@ -1333,6 +1499,95 @@
     </div>
   </section>
 
+  <!-- ===== STUDENT DISPATCHES ===== -->
+  <section class="blog-section" id="dispatches">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-label js-reveal">Student Dispatches</p>
+        <h2 class="section-title js-reveal">Field Notes &amp; Updates</h2>
+      </div>
+
+      <div class="blog-grid">
+
+        <!-- Post 1 — Featured (spans 2 cols on desktop) -->
+        <article class="blog-card blog-card--featured js-reveal stagger-1" tabindex="0">
+          <!-- On desktop, split into eyebrow col + body col -->
+          <div class="blog-card-eyebrow">
+            <div class="blog-card-meta">
+              <span class="blog-tag">AI Ethics</span>
+            </div>
+            <span class="blog-date">March 2026</span>
+          </div>
+          <div class="blog-card-body">
+            <h3 class="blog-card-title">Purple Feather Launch: AI Ethics Presentation</h3>
+            <p class="blog-card-summary">Presenting Purple Feather as an ethical AI copilot to the Niagara University community. Built by students, for students.</p>
+            <span class="blog-card-arrow" aria-label="Read post">
+              Read Post
+              <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+            </span>
+          </div>
+        </article>
+
+        <!-- Post 2 -->
+        <article class="blog-card js-reveal stagger-2" tabindex="0">
+          <div class="blog-card-meta">
+            <span class="blog-tag">Academic Ops</span>
+            <span class="blog-date">March 2026</span>
+          </div>
+          <h3 class="blog-card-title">Tactical Briefs: Turning Lectures Into Intel</h3>
+          <p class="blog-card-summary">How MAE converts raw lecture content into structured threat/opportunity briefs that actually help you study.</p>
+          <span class="blog-card-arrow" aria-label="Read post">
+            Read Post
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+          </span>
+        </article>
+
+        <!-- Post 3 -->
+        <article class="blog-card js-reveal stagger-3" tabindex="0">
+          <div class="blog-card-meta">
+            <span class="blog-tag">Mental Health</span>
+            <span class="blog-date">March 2026</span>
+          </div>
+          <h3 class="blog-card-title">Building a Student Support System That Doesn't Quit</h3>
+          <p class="blog-card-summary">Why student copilots need to be more than chatbots — they need to hold the line when burnout hits.</p>
+          <span class="blog-card-arrow" aria-label="Read post">
+            Read Post
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+          </span>
+        </article>
+
+        <!-- Post 4 -->
+        <article class="blog-card js-reveal stagger-4" tabindex="0">
+          <div class="blog-card-meta">
+            <span class="blog-tag">Veteran Affairs</span>
+            <span class="blog-date">April 2026</span>
+          </div>
+          <h3 class="blog-card-title">From Combat to Campus: Veteran Student Tech</h3>
+          <p class="blog-card-summary">Navigating the transition from military service to higher education with AI-assisted operations planning.</p>
+          <span class="blog-card-arrow" aria-label="Read post">
+            Read Post
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+          </span>
+        </article>
+
+        <!-- Post 5 -->
+        <article class="blog-card js-reveal stagger-5" tabindex="0">
+          <div class="blog-card-meta">
+            <span class="blog-tag">Infrastructure</span>
+            <span class="blog-date">April 2026</span>
+          </div>
+          <h3 class="blog-card-title">OpenClaw: Taking the Copilot Offline</h3>
+          <p class="blog-card-summary">When credits run out or the network goes dark, the doctrine still stands. Building offline-first student AI.</p>
+          <span class="blog-card-arrow" aria-label="Read post">
+            Read Post
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+          </span>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
   <!-- ===== FOOTER ===== -->
   <footer class="footer">
     <div class="container footer-inner">
@@ -1343,6 +1598,7 @@
           <a href="#">Parent Protocol: MAE</a>
           <a href="https://chatgpt.com/g/g-69cabc3745788191958cc80d45db0635-mae-purple-feather" target="_blank" rel="noopener">Try on ChatGPT</a>
           <a href="https://github.com/[CALLSIGN]/My-Autonomous-Entity" target="_blank" rel="noopener">GitHub</a>
+          <a href="#dispatches">Dispatches</a>
         </div>
       </div>
       <div class="footer-right">

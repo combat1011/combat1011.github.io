@@ -370,6 +370,116 @@
     }
 
     /* ========================================
+       BLOG GRID
+       ======================================== */
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: var(--space-5);
+    }
+
+    .blog-card {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-3);
+      padding: var(--space-6);
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-xl);
+      text-decoration: none;
+      color: var(--color-text);
+      transition: all 0.3s var(--ease-out);
+      overflow: hidden;
+    }
+
+    .blog-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: var(--color-primary);
+      opacity: 0;
+      transition: opacity 0.3s var(--ease-out);
+    }
+
+    .blog-card:hover {
+      border-color: var(--color-primary);
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg), var(--shadow-glow);
+    }
+
+    .blog-card:hover::before {
+      opacity: 1;
+    }
+
+    .blog-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: var(--space-3);
+    }
+
+    .blog-tag {
+      display: inline-block;
+      font-family: var(--font-display);
+      font-size: var(--text-xs);
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--color-primary);
+      background: var(--color-primary-ghost);
+      border: 1px solid rgba(196, 90, 60, 0.2);
+      padding: var(--space-1) var(--space-3);
+      border-radius: var(--radius-sm);
+      white-space: nowrap;
+    }
+
+    .blog-arrow {
+      font-size: var(--text-sm);
+      color: var(--color-text-faint);
+      transition: all 0.3s var(--ease-out);
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .blog-card:hover .blog-arrow {
+      color: var(--color-primary);
+      transform: translateX(4px);
+    }
+
+    .blog-title {
+      font-family: var(--font-display);
+      font-size: var(--text-lg);
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      line-height: 1.25;
+      color: var(--color-text);
+    }
+
+    .blog-date {
+      font-size: var(--text-xs);
+      color: var(--color-text-faint);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .blog-summary {
+      font-size: var(--text-sm);
+      color: var(--color-text-muted);
+      line-height: 1.6;
+      flex-grow: 1;
+    }
+
+    @media (max-width: 600px) {
+      .blog-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* ========================================
        BIO SECTION
        ======================================== */
     .bio {
@@ -620,6 +730,68 @@
       </div>
     </section>
 
+    <!-- BLOG & POSTS -->
+    <section id="blog" class="section" style="border-top: 1px solid var(--color-border);">
+      <div class="section-inner">
+        <p class="section-label reveal">Intel &amp; Dispatches</p>
+        <h2 class="section-title reveal">Blog &amp; Posts</h2>
+
+        <div class="blog-grid">
+
+          <a href="/purple-feather/" class="blog-card reveal">
+            <div class="blog-card-header">
+              <span class="blog-tag">AI Ethics</span>
+              <span class="blog-arrow">→</span>
+            </div>
+            <span class="blog-title">Purple Feather: AI Ethics in Education</span>
+            <span class="blog-date">March 2026</span>
+            <p class="blog-summary">How a combat veteran built a student copilot that puts privacy and agency first.</p>
+          </a>
+
+          <a href="/drone/" class="blog-card reveal">
+            <div class="blog-card-header">
+              <span class="blog-tag">AgTech</span>
+              <span class="blog-arrow">→</span>
+            </div>
+            <span class="blog-title">DroneScope WNY: Precision Agriculture Meets AI</span>
+            <span class="blog-date">April 2026</span>
+            <p class="blog-summary">Integrating drone operations, sustainable agriculture, and AI systems for regenerative cattle ranching in Western New York.</p>
+          </a>
+
+          <a href="/mae/" class="blog-card reveal">
+            <div class="blog-card-header">
+              <span class="blog-tag">AI Architecture</span>
+              <span class="blog-arrow">→</span>
+            </div>
+            <span class="blog-title">The MAE Protocol: Building AI That Holds the Line</span>
+            <span class="blog-date">February 2026</span>
+            <p class="blog-summary">A modular AI copilot framework designed for real people in real situations. Not chatbots — tools that don't quit.</p>
+          </a>
+
+          <a href="https://github.com/combat1011/mae-openclaw" class="blog-card reveal" target="_blank" rel="noopener">
+            <div class="blog-card-header">
+              <span class="blog-tag">Infrastructure</span>
+              <span class="blog-arrow">→</span>
+            </div>
+            <span class="blog-title">OpenClaw + Ollama: Offline AI Operations</span>
+            <span class="blog-date">April 2026</span>
+            <p class="blog-summary">Deploying local AI agents with zero cloud dependency. Bunker-grade autonomy for when the network goes dark.</p>
+          </a>
+
+          <a href="/kindermae/" class="blog-card reveal">
+            <div class="blog-card-header">
+              <span class="blog-tag">Education</span>
+              <span class="blog-arrow">→</span>
+            </div>
+            <span class="blog-title">KinderMAE: AI Companions for Ages 5–14</span>
+            <span class="blog-date">April 2026</span>
+            <p class="blog-summary">Same loyalty, softer voice. Building age-appropriate AI companions that teach without condescending.</p>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
     <!-- BIO -->
     <section class="section bio">
       <div class="section-inner">
@@ -672,6 +844,7 @@
         <a href="/mae/" class="footer-link">MAE Protocol</a>
         <a href="/purple-feather/" class="footer-link">Purple Feather</a>
         <a href="/kindermae/" class="footer-link">KinderMAE</a>
+        <a href="#blog" class="footer-link">Blog &amp; Posts</a>
       </div>
 
       <p class="footer-ool">
